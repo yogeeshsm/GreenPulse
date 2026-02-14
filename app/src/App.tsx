@@ -14,6 +14,7 @@ import { ClosingCTASection } from '@/sections/ClosingCTASection';
 import { Timeline } from '@/components/Timeline';
 import { MicroMoves } from '@/components/MicroMoves';
 import { CarbonCreditCalculator } from '@/components/CarbonCreditCalculator';
+import { CarbonFootprintCalculator } from '@/components/CarbonFootprintCalculator';
 import { CalculatorLayout } from '@/components/calculator/CalculatorLayout';
 import { Communities } from '@/components/Communities';
 import { ToastProvider, showToast } from '@/components/Toast';
@@ -157,6 +158,13 @@ function App() {
         return (
           <>
             <CarbonCreditCalculator />
+            <ClosingCTASection onStartDay={handleStartDay} onJoinCircle={handleJoinCircle} />
+          </>
+        );
+      case 'footprint-calculator':
+        return (
+          <>
+            <CarbonFootprintCalculator />
             <ClosingCTASection onStartDay={handleStartDay} onJoinCircle={handleJoinCircle} />
           </>
         );
@@ -311,7 +319,7 @@ function App() {
               gradient="sky-gradient-dusk"
               layout="right-image"
               zIndex={90}
-              onCtaClick={() => setCurrentView('insights')}
+              onCtaClick={() => setCurrentView('communities')}
             />
 
             <FeatureSection
@@ -326,7 +334,7 @@ function App() {
               gradient="sky-gradient-night"
               layout="left-image"
               zIndex={100}
-              onCtaClick={() => setCurrentView('carbon-calculator')}
+              onCtaClick={() => setCurrentView('footprint-calculator')}
             />
 
             {/* Daily Summary */}

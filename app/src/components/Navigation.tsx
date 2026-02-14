@@ -29,7 +29,8 @@ export function Navigation({ currentView, onViewChange, daySession }: Navigation
     { id: 'micromoves', label: 'Micro-Moves', icon: Zap },
     { id: 'insights', label: 'Insights', icon: BarChart3 },
     { id: 'ledger', label: 'Impact Ledger', icon: BookOpen },
-    { id: 'carbon-calculator', label: 'Carbon Calculator', icon: Calculator },
+    { id: 'carbon-calculator', label: 'Carbon Credits', icon: Calculator },
+    { id: 'footprint-calculator', label: 'Footprint Calculator', icon: BarChart3 },
     { id: 'communities', label: 'Communities', icon: Users },
     { id: 'summary', label: 'Daily Summary', icon: Award },
   ];
