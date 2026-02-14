@@ -1,7 +1,12 @@
-# 🌿 GreenPulse AI — Personal Sustainability Tracker
-
-GreenPulse AI is a full-stack web application that helps individuals track, measure, and reduce their environmental footprint through daily activity logging and real-time carbon impact calculations.
-
+# 🌿 GreenPulse AI is an AI-powered, image-assisted carbon footprint estimation tool that makes environmental impact assessment simple and accessible.
+* Users can estimate the carbon cost of everyday objects by uploading a photo and adding optional context.
+* The system combines computer vision, generative AI, and sustainability science to deliver meaningful insights.
+* It identifies objects from images and analyzes their lifecycle impact.
+* Carbon emissions are estimated in grams of CO₂ equivalent (gCO₂e).
+* Calculations consider manufacturing processes, materials, and usage impacts.
+* The platform transforms complex environmental data into clear, understandable results.
+* It supports informed decision-making for individuals and organizations.
+* GreenPulse AI empowers users to take practical steps toward reducing their carbon footprint.
 ![React](https://img.shields.io/badge/React-19.2-blue?logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.8-blue?logo=typescript)
 ![Vite](https://img.shields.io/badge/Vite-7.2-purple?logo=vite)
