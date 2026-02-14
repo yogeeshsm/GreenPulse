@@ -15,6 +15,7 @@ import { Timeline } from '@/components/Timeline';
 import { MicroMoves } from '@/components/MicroMoves';
 import { CarbonCreditCalculator } from '@/components/CarbonCreditCalculator';
 import { CalculatorLayout } from '@/components/calculator/CalculatorLayout';
+import { Communities } from '@/components/Communities';
 import { ToastProvider, showToast } from '@/components/Toast';
 import { useAppState } from '@/hooks/useAppState';
 import { Train, Salad, Droplets, Zap, Wind, ShoppingBag, Users, Recycle, Calculator, Plane } from 'lucide-react';
@@ -82,8 +83,7 @@ function App() {
   };
 
   const handleJoinCircle = () => {
-    // TODO: Implement circles/social features
-    setCurrentView('dashboard');
+    setCurrentView('communities');
   };
 
   // Render different views based on currentView
@@ -145,6 +145,13 @@ function App() {
       case 'input':
         return (
           <CalculatorLayout onBack={() => setCurrentView('dashboard')} />
+        );
+      case 'communities':
+        return (
+          <>
+            <Communities onBack={() => setCurrentView('dashboard')} />
+            <ClosingCTASection onStartDay={handleStartDay} onJoinCircle={handleJoinCircle} />
+          </>
         );
       case 'carbon-calculator':
         return (
