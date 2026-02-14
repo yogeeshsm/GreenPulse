@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Leaf, Home, Calendar, Zap, BarChart3, User, LayoutDashboard, Award, BookOpen, ArrowLeft, Calculator, ClipboardList, Users } from 'lucide-react';
+import { Menu, X, Leaf, Home, Calendar, Zap, BarChart3, User, LayoutDashboard, Award, BookOpen, ArrowLeft, Calculator, ClipboardList, Users, ScanLine } from 'lucide-react';
 import type { DaySession } from '@/types';
 
 interface NavigationProps {
@@ -31,6 +31,7 @@ export function Navigation({ currentView, onViewChange, daySession }: Navigation
     { id: 'ledger', label: 'Impact Ledger', icon: BookOpen },
     { id: 'carbon-calculator', label: 'Carbon Credits', icon: Calculator },
     { id: 'footprint-calculator', label: 'Footprint Calculator', icon: BarChart3 },
+    { id: 'ecoscan', label: 'EcoScan', icon: ScanLine },
     { id: 'communities', label: 'Communities', icon: Users },
     { id: 'summary', label: 'Daily Summary', icon: Award },
   ];

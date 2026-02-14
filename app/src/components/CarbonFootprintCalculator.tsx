@@ -144,8 +144,7 @@ export function CarbonFootprintCalculator() {
           </div>
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Calculate your Carbon Footprint</h1>
           <p className="text-gray-500 max-w-lg mx-auto text-sm">
-            Based on the methodology by Climate Change Department, Government of Gujarat.
-            Enter your monthly consumption to estimate your carbon footprint.
+            Enter your monthly consumption to estimate your household and transportation carbon footprint.
           </p>
         </div>
 
@@ -545,7 +544,7 @@ export function CarbonFootprintCalculator() {
             people in India is about 1.6 tonnes per year, compared to the global average of 4 tonnes per year.
           </p>
           <p className="mt-2 text-gray-400">
-            Reference: Climate Change Department, Government of Gujarat &bull; GHG Protocol
+            Reference: India CEA Grid Emission Factor &bull; GHG Protocol
           </p>
         </div>
 

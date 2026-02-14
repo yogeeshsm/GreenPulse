@@ -87,6 +87,14 @@ function App() {
     setCurrentView('communities');
   };
 
+  const handleViewChange = (view: string) => {
+    if (view === 'ecoscan') {
+      window.open('https://eco-pulse-ai.vercel.app/', '_blank');
+      return;
+    }
+    setCurrentView(view);
+  };
+
   // Render different views based on currentView
   const renderView = () => {
     // Show Daily Summary modal if triggered
@@ -374,7 +382,7 @@ function App() {
       <div className="grain-overlay" />
 
       {/* Navigation */}
-      <Navigation currentView={currentView} onViewChange={setCurrentView} daySession={daySession} />
+      <Navigation currentView={currentView} onViewChange={handleViewChange} daySession={daySession} />
 
       {/* Main Content */}
       <main className="relative">
