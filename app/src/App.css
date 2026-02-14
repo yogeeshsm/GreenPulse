@@ -1,0 +1,125 @@
+/* App-specific styles */
+
+/* Ensure smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom selection color */
+::selection {
+  background-color: rgba(45, 212, 191, 0.3);
+  color: white;
+}
+
+/* Tab transitions */
+[data-state="active"] {
+  transition: all 0.2s ease;
+}
+
+/* Card hover lift effect */
+.eco-card {
+  will-change: transform, box-shadow;
+}
+
+/* Ensure charts are responsive */
+.recharts-wrapper {
+  width: 100% !important;
+}
+
+/* Dialog backdrop blur */
+[data-state="open"] > [data-radix-dialog-overlay] {
+  backdrop-filter: blur(8px);
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Button ripple effect */
+.eco-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.eco-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s;
+}
+
+.eco-button:active::after {
+  width: 200%;
+  height: 200%;
+}
+
+/* Loading shimmer for skeleton states */
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(45, 212, 191, 0.05) 0%,
+    rgba(45, 212, 191, 0.15) 50%,
+    rgba(45, 212, 191, 0.05) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .eco-gradient-bg {
+    background-attachment: fixed;
+  }
+  
+  .glass-panel {
+    backdrop-filter: blur(10px);
+  }
+}
+
+/* Print styles for reports */
+@media print {
+  .eco-gradient-bg {
+    background: white !important;
+  }
+  
+  .glass-panel {
+    background: white !important;
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+  }
+  
+  nav, footer {
+    display: none !important;
+  }
+}
+
+/* Focus styles for accessibility */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid rgba(45, 212, 191, 0.5);
+  outline-offset: 2px;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

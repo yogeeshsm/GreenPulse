@@ -1,0 +1,260 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 25% 8%;
+    --foreground: 160 20% 95%;
+    --card: 220 20% 10%;
+    --card-foreground: 160 20% 95%;
+    --popover: 220 20% 10%;
+    --popover-foreground: 160 20% 95%;
+    --primary: 168 76% 42%;
+    --primary-foreground: 220 25% 8%;
+    --secondary: 220 15% 15%;
+    --secondary-foreground: 160 20% 95%;
+    --muted: 220 15% 18%;
+    --muted-foreground: 160 10% 65%;
+    --accent: 190 80% 50%;
+    --accent-foreground: 220 25% 8%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 15% 20%;
+    --input: 220 15% 18%;
+    --ring: 168 76% 42%;
+    --radius: 0.75rem;
+    
+    /* Custom Eco Colors */
+    --eco-teal: 168 76% 42%;
+    --eco-green: 142 71% 45%;
+    --eco-ocean: 199 89% 48%;
+    --eco-deep: 220 25% 8%;
+    --eco-glow: 168 76% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--eco-deep));
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, hsl(var(--eco-teal)), hsl(var(--eco-ocean)));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, hsl(var(--eco-glow)), hsl(var(--eco-teal)));
+}
+
+/* Gradient Backgrounds */
+.eco-gradient-bg {
+  background: linear-gradient(135deg, 
+    hsl(220 25% 6%) 0%, 
+    hsl(190 40% 8%) 25%, 
+    hsl(168 30% 10%) 50%, 
+    hsl(199 35% 8%) 75%, 
+    hsl(220 25% 6%) 100%
+  );
+}
+
+.eco-gradient-text {
+  background: linear-gradient(135deg, 
+    hsl(168 76% 55%) 0%, 
+    hsl(142 71% 55%) 50%, 
+    hsl(199 89% 60%) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.eco-glow {
+  box-shadow: 
+    0 0 20px rgba(45, 212, 191, 0.3),
+    0 0 40px rgba(45, 212, 191, 0.1),
+    0 0 60px rgba(45, 212, 191, 0.05);
+}
+
+.eco-card-glow {
+  box-shadow: 
+    0 4px 30px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(45, 212, 191, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Gauge Animation */
+@keyframes gauge-fill {
+  from {
+    stroke-dashoffset: 440;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px rgba(45, 212, 191, 0.6));
+  }
+  50% {
+    filter: drop-shadow(0 0 16px rgba(45, 212, 191, 0.9));
+  }
+}
+
+.gauge-animate {
+  animation: gauge-fill 1.5s ease-out forwards, pulse-glow 2s ease-in-out infinite;
+}
+
+/* Card Hover Effects */
+.eco-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.eco-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 8px 40px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(45, 212, 191, 0.2),
+    0 0 30px rgba(45, 212, 191, 0.1);
+}
+
+/* Score Colors */
+.score-excellent { color: hsl(142 71% 55%); }
+.score-good { color: hsl(168 76% 50%); }
+.score-moderate { color: hsl(45 90% 55%); }
+.score-low { color: hsl(25 90% 55%); }
+.score-unsustainable { color: hsl(0 84% 60%); }
+
+/* Progress Ring */
+.progress-ring-circle {
+  transition: stroke-dashoffset 1s ease-in-out;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+/* Glass Effect */
+.glass-panel {
+  background: rgba(15, 23, 30, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(45, 212, 191, 0.1);
+}
+
+/* Animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.5s ease-out forwards;
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(45, 212, 191, 0.1) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Radar Chart Styles */
+.radar-grid {
+  stroke: rgba(45, 212, 191, 0.2);
+  stroke-width: 1;
+}
+
+.radar-axis {
+  stroke: rgba(45, 212, 191, 0.3);
+  stroke-width: 1;
+}
+
+.radar-area {
+  fill: url(#radarGradient);
+  stroke: hsl(168 76% 50%);
+  stroke-width: 2;
+}
+
+/* Button Styles */
+.eco-button {
+  background: linear-gradient(135deg, hsl(168 76% 42%), hsl(199 89% 48%));
+  transition: all 0.3s ease;
+}
+
+.eco-button:hover {
+  background: linear-gradient(135deg, hsl(168 76% 50%), hsl(199 89% 55%));
+  box-shadow: 0 0 20px rgba(45, 212, 191, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Section Divider */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(45, 212, 191, 0.3) 50%,
+    transparent 100%
+  );
+}
+
+/* Badge Styles */
+.badge-eco {
+  background: linear-gradient(135deg, rgba(45, 212, 191, 0.2), rgba(34, 211, 238, 0.1));
+  border: 1px solid rgba(45, 212, 191, 0.3);
+  color: hsl(168 76% 60%);
+}
+
+/* Tooltip */
+.eco-tooltip {
+  background: rgba(15, 23, 30, 0.95);
+  border: 1px solid rgba(45, 212, 191, 0.3);
+  backdrop-filter: blur(10px);
+}
