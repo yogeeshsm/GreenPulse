@@ -1,6 +1,6 @@
-# 🌿 GreenPulse — Personal Sustainability Tracker
+# 🌿 GreenPulse AI — Personal Sustainability Tracker
 
-GreenPulse is a full-stack web application that helps individuals track, measure, and reduce their environmental footprint through daily activity logging and real-time carbon impact calculations.
+GreenPulse AI is a full-stack web application that helps individuals track, measure, and reduce their environmental footprint through daily activity logging and real-time carbon impact calculations.
 
 ![React](https://img.shields.io/badge/React-19.2-blue?logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.8-blue?logo=typescript)
@@ -18,7 +18,7 @@ GreenPulse is a full-stack web application that helps individuals track, measure
 - Streak counter and daily activity timeline
 - Quick-log modal for fast activity entry
 
-### 📊 Input Calculator (Sustrax Vita-style)
+### 📊 Input Calculator 
 - **7 input categories:** Electricity, Natural Gas, Fuel, Cars, Flights, Public Transport, Spend
 - Sidebar navigation with step wizard (Select → Input → Review)
 - Country-based emission factors for accurate calculations
